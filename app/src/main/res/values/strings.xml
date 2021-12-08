@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GearlockApp</string>
+    <!-- Preference Titles -->
+    <string name="gxpm">Install / Uninstall (GXPM)</string>
+    <string name="run_extensions">Run GearLock Extensions</string>
+    <string name="supercharge">SuperCharge System Image</string>
+    <string name="backup_restore">Backup /Restore /Wipe FS</string>
+    <string name="classic_games">Play Classic Games here</string>
+    <string name="extra_misc">Extra misc. functions</string>
+    <string name="game_system">Game / System Tweaks</string>
+    <string name="system_mask">SystemMask DashBoard</string>
+    <string name="title_activity_gxpm">GxpmActivity</string>
+</resources>
