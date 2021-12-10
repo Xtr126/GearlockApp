@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 public class ScrollingFragment extends Fragment {
     interface OnOptionClickListener {
@@ -17,17 +17,17 @@ public class ScrollingFragment extends Fragment {
     }
 
     private OnOptionClickListener mCallback;
+
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mCallback = (OnOptionClickListener) context;
     }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_scrolling, container, false);
 
         LinearLayout mGxpm = rootView.findViewById(R.id.installOption);
@@ -39,54 +39,14 @@ public class ScrollingFragment extends Fragment {
         LinearLayout mSystem = rootView.findViewById(R.id.systemOption);
         LinearLayout mSysmask = rootView.findViewById(R.id.system_maskOption);
 
-        mGxpm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("gxpmInstall");
-            }
-        });
-        mExtensions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("runExtensions");
-            }
-        });
-        mSupercharge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("Supercharge");
-            }
-        });
-        mBackup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("Backup");
-            }
-        });
-        mGames.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("Games");
-            }
-        });
-        mExtraMisc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("ExtraMisc");
-            }
-        });
-        mSystem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("SystemTweaks");
-            }
-        });
-        mSysmask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCallback.onOptionSelected("Dashboard");
-            }
-        });
+        mGxpm.setOnClickListener(view -> mCallback.onOptionSelected("gxpmInstall"));
+        mExtensions.setOnClickListener(view -> mCallback.onOptionSelected("runExtensions"));
+        mSupercharge.setOnClickListener(view -> mCallback.onOptionSelected("Supercharge"));
+        mBackup.setOnClickListener(view -> mCallback.onOptionSelected("Backup"));
+        mGames.setOnClickListener(view -> mCallback.onOptionSelected("Games"));
+        mExtraMisc.setOnClickListener(view -> mCallback.onOptionSelected("ExtraMisc"));
+        mSystem.setOnClickListener(view -> mCallback.onOptionSelected("SystemTweaks"));
+        mSysmask.setOnClickListener(view -> mCallback.onOptionSelected("Dashboard"));
 
         return rootView;
     }
