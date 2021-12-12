@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements ScrollingFragment
     }
 
     public void applyBackground(){
-        Bitmap bitmap = BlurView.jFastblur(this,6,7.5f,120);
+        Bitmap bitmap = BlurView.jFastblur(this, 10, 7.5f, 1200);
         Drawable drawable = new BitmapDrawable(getResources(), bitmap);
         LinearLayout linearlayout = findViewById(R.id.main_layout);
         linearlayout.setBackground(drawable);
